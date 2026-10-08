@@ -1,24 +1,15 @@
-// Import the functions you need from the SDKs
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
 import { getFirestore } from "firebase/firestore";
 
-//  Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCyfRAKDfiWnwjJr6iDPEHxYVTbmkwvJmA",
-  authDomain: "fir-crud-blog.firebaseapp.com",
-  projectId: "fir-crud-blog",
-  storageBucket: "fir-crud-blog.firebasestorage.app",
-  messagingSenderId: "1021183928383",
-  appId: "1:1021183928383:web:021de315bad3d6f0c6b08a",
-  measurementId: "G-75PR85RWGY"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-// Initialize Analytics
-const analytics = getAnalytics(app);
-
-// Initialize Firestore
 export const db = getFirestore(app);
